@@ -32,3 +32,23 @@ CREATE TABLE siparis_detaylari (
     birim_fiyat DECIMAL(10,2) NOT NULL,
     PRIMARY KEY (siparis_id, urun_id)
 );
+
+-- 5. İndirim Kuponları Tablosu
+CREATE TABLE indirim_kuponlari (
+    kupon_id SERIAL PRIMARY KEY,
+    kupon_kodu VARCHAR(20) UNIQUE NOT NULL,
+    indirim_yuzdesi INTEGER CHECK (indirim_yuzdesi > 0 AND indirim_yuzdesi <= 100),
+    gecerlilik_tarihi DATE NOT NULL,
+    aktif_mi BOOLEAN DEFAULT TRUE
+);
+
+-- 6. Ürün Yorumları Tablosu
+CREATE TABLE urun_yorumlar (
+    yorum_id SERIAL PRIMARY KEY,
+    urun_id INTEGER REFERENCES urunler(urun_id),
+    kullanici_id INTEGER REFERENCES kullanicilar(kullanici_id),
+    puan INTEGER CHECK (puan >= 1 AND puan <= 5), -- 1-5 yıldız arası
+    yorum_metni TEXT,
+    yorum_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+);
