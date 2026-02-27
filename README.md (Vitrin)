@@ -30,14 +30,3 @@ Influencer Takibi: İş birliklerinden gelen doğrudan satışlar raporlanabilir
 ✅ İade Yönetimi: Müşteri memnuniyeti ve iade süreçlerinin takibi.
 ✅ Envanter Loglama: Stok hareketlerinin (giriş/çıkış) tarih bazlı kaydı.
 ✅ Pazarlama Verimliliği: Reklam kampanyalarının iade oranları üzerinden analiz edilmesi.
-
-erDiagram
-    KULLANICILAR ||--o{ SIPARISLER : "verir"
-    KULLANICILAR ||--o{ URUN_YORUMLAR : "yapar"
-    URUNLER ||--o{ SIPARIS_DETAYLARI : "içerir"
-    URUNLER ||--o{ URUN_YORUMLAR : "alır"
-    URUNLER ||--o{ STOK_HAREKETLERI : "izlenir"
-    SIPARISLER ||--|{ SIPARIS_DETAYLARI : "sahiptir"
-    SIPARISLER ||--o{ KAMPANYA_TAKIP : "kaynaklanır"
-    SIPARISLER ||--o{ IADELER : "edilebilir"
-    URUNLER ||--o{ IADELER : "iade_edilir"
