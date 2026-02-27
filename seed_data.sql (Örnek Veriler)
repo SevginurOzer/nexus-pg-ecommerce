@@ -1,0 +1,16 @@
+--örnek kullanıcılar
+INSERT INTO kullanicilar (ad_soyad, eposta) VALUES
+('Kadir Kepli', 'kadir@kepli.com'),
+('Ahmet Yılmaz', 'ahmet@yimaz.com'),
+('Zarife Akın', 'zarife@akin.com');
+
+--örnek ürünler
+INSERT INTO urunler (urun_adi, fiyat, stok_miktari, kategori, ozellikler) VALUES
+('Gaming Laptop', 45000.00, 10, 'Elektronik', '{"islemci": "i7", "ram": "16GB", "renk": "Siyah"}'),
+('Pamuklu Tişört', 450.00, 100, 'Giyim', '{"renk": "Mavi", "beden": "L", "kumas": "Pamuk"}');
+
+-- Örnek Sipariş
+INSERT INTO siparisler (kullanici_id, durum) VALUES (1, 'Beklemede');
+INSERT INTO siparis_detaylari (siparis_id, urun_id, adet, birim_fiyat) VALUES (1, 1, 1, 45000.00);
+INSERT INTO siparisler (kullanici_id, durum) VALUES (3, 'Beklemede');
+INSERT INTO siparis_detaylari (siparis_id, urun_id, adet, birim_fiyat) VALUES (2, 2, 1, 450.00);
