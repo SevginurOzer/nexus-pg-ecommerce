@@ -1,0 +1,21 @@
+# 🚀 Nexus Commerce Engine - PostgreSQL Portfolyo Projesi
+
+Bu proje, bir e-ticaret sisteminin veritabanı altyapısını ve iş mantığını (Business Logic) temsil eder. Yönetim Bilişim Sistemleri (YBS) eğitimim kapsamında geliştirdiğim bu çalışma, ilişkisel veritabanı tasarımı ve performanslı sorgulama üzerine odaklanmıştır.
+
+## 🛠️ Teknik Özellikler
+- **PostgreSQL 17** mimarisi üzerine kurulu.
+- **İlişkisel Veri:** Kullanıcılar, Siparişler ve Ürünler arasında ölçeklenebilir bir yapı.
+- **JSONB Kullanımı:** Ürünlerin teknik özellikleri (RAM, Renk, Kumaş tipi vb.) esnek ve performanslı bir şekilde JSONB formatında saklanır.
+- **Veri Güvenliği:** `CHECK constraints` ile stok miktarının eksiye düşmesi ve fiyatların sıfırın altında kalması veritabanı seviyesinde engellenmiştir.
+
+## 📊 Örnek Veri Modeli (ERD)
+
+
+## 🔍 Öne Çıkan SQL Sorguları
+
+### 1. JSONB Verisi İçinde Arama
+"Siyah" renkli ürünleri JSON içinden çekip getiren sorgu:
+```sql
+SELECT urun_adi, ozellikler->>'renk' as renk
+FROM urunler
+WHERE ozellikler @> '{"renk": "Siyah"}';
