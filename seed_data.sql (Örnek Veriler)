@@ -14,3 +14,13 @@ INSERT INTO siparisler (kullanici_id, durum) VALUES (1, 'Beklemede');
 INSERT INTO siparis_detaylari (siparis_id, urun_id, adet, birim_fiyat) VALUES (1, 1, 1, 45000.00);
 INSERT INTO siparisler (kullanici_id, durum) VALUES (3, 'Beklemede');
 INSERT INTO siparis_detaylari (siparis_id, urun_id, adet, birim_fiyat) VALUES (2, 2, 1, 450.00);
+
+-- İndirim Kuponu Ekleme
+INSERT INTO indirim_kuponlari (kupon_kodu, indirim_yuzdesi, gecerlilik_tarihi) VALUES 
+('YBS2026', 20, '2026-12-31'),
+('ILKSIPARIS', 10, '2026-06-01');
+
+-- Ürün Yorumu Ekleme
+INSERT INTO urun_yorumlar (urun_id, kullanici_id, puan, yorum_metni) VALUES 
+(1, 1, 5, 'Harika bir laptop, hızı inanılmaz!'),
+(2, 1, 4, 'Tişörtün kumaşı kaliteli ama kalıbı biraz dar.');
