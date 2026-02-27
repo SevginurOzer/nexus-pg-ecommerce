@@ -52,3 +52,12 @@ CREATE TABLE urun_yorumlar (
     yorum_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 );
+
+-- 7. Sosyal Medya Kampanyaları ve Trafik Takibi
+CREATE TABLE kampanya_takip (
+    takip_id SERIAL PRIMARY KEY,
+    siparis_id INTEGER REFERENCES siparisler(siparis_id),
+    kaynak VARCHAR(50), -- Instagram, TikTok, Facebook, Google
+    kampanya_adi VARCHAR(100), -- Yaz_Indirimi_2026, Influencer_Kadir_Isbirligi
+    tiklama_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
