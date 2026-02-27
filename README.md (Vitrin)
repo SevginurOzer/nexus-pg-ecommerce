@@ -21,3 +21,10 @@ FROM urunler
 WHERE ozellikler @> '{"renk": "Siyah"}';
 
 Müşteri sadakati için İndirim Kuponu sistemi ve Ürün Yorumlama/Puanlama altyapısı eklendi.
+
+📱 Sosyal Medya & Performans Pazarlama Entegrasyonu
+Bu veritabanı sadece ürün satmakla kalmaz, aynı zamanda pazarlama bütçenizi optimize eder.
+
+Kampanya Analizi: Hangi sosyal medya kanalının (Instagram, TikTok vb.) daha yüksek dönüşüm oranı (Conversion Rate) getirdiği veritabanı seviyesinde takip edilir.
+
+Influencer Takibi: İş birliklerinden gelen doğrudan satışlar raporlanabilir.
