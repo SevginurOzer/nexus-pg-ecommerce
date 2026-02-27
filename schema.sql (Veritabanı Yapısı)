@@ -61,3 +61,22 @@ CREATE TABLE kampanya_takip (
     kampanya_adi VARCHAR(100), -- Yaz_Indirimi_2026, Influencer_Kadir_Isbirligi
     tiklama_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- 8. İadeler Tablosu (Operasyonel Takip)
+CREATE TABLE iadeler (
+    iade_id SERIAL PRIMARY KEY,
+    siparis_id INTEGER REFERENCES siparisler(siparis_id),
+    urun_id INTEGER REFERENCES urunler(urun_id),
+    iade_nedeni TEXT,
+    iade_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    iade_durumu VARCHAR(20) DEFAULT 'İncelemede' CHECK (iade_durumu IN ('İncelemede', 'Onaylandı', 'Reddedildi'))
+);
+
+-- 9. Stok Hareketleri Tablosu (Lojistik ve Envanter Analizi)
+CREATE TABLE stok_hareketleri (
+    hareket_id SERIAL PRIMARY KEY,
+    urun_id INTEGER REFERENCES urunler(urun_id),
+    degisim_miktari INTEGER, -- Örn: -1 (satış), +50 (yeni stok alımı)
+    islem_turu VARCHAR(50), -- 'Satış', 'Yeni Stok', 'İade'
+    islem_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
