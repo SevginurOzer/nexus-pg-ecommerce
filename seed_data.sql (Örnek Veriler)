@@ -29,3 +29,12 @@ INSERT INTO urun_yorumlar (urun_id, kullanici_id, puan, yorum_metni) VALUES
 INSERT INTO kampanya_takip (siparis_id, kaynak, kampanya_adi) VALUES 
 (1, 'Instagram', 'Influencer_Kadir_Isbirligi'),
 (NULL, 'TikTok', 'Bahar_Kampanyasi_2026'); -- Siparişe dönüşmemiş bir tıklama
+
+-- Bir iade kaydı oluşturma
+INSERT INTO iadeler (siparis_id, urun_id, iade_nedeni, iade_durumu) VALUES 
+(1, 1, 'Ürünün ekranı hasarlı geldi.', 'İncelemede');
+
+-- Stok hareketlerini loglama
+INSERT INTO stok_hareketleri (urun_id, degisim_miktari, islem_turu) VALUES 
+(1, -1, 'Satış'),  -- Bir laptop satıldı
+(2, 50, 'Yeni Stok'); -- 50 adet yeni tişört geldi
