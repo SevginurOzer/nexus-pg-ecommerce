@@ -24,3 +24,8 @@ INSERT INTO indirim_kuponlari (kupon_kodu, indirim_yuzdesi, gecerlilik_tarihi) V
 INSERT INTO urun_yorumlar (urun_id, kullanici_id, puan, yorum_metni) VALUES 
 (1, 1, 5, 'Harika bir laptop, hızı inanılmaz!'),
 (2, 1, 4, 'Tişörtün kumaşı kaliteli ama kalıbı biraz dar.');
+
+-- Örnek kampanya verileri ekleme
+INSERT INTO kampanya_takip (siparis_id, kaynak, kampanya_adi) VALUES 
+(1, 'Instagram', 'Influencer_Kadir_Isbirligi'),
+(NULL, 'TikTok', 'Bahar_Kampanyasi_2026'); -- Siparişe dönüşmemiş bir tıklama
