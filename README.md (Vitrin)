@@ -19,3 +19,5 @@ Bu proje, bir e-ticaret sisteminin veritabanı altyapısını ve iş mantığın
 SELECT urun_adi, ozellikler->>'renk' as renk
 FROM urunler
 WHERE ozellikler @> '{"renk": "Siyah"}';
+
+Müşteri sadakati için İndirim Kuponu sistemi ve Ürün Yorumlama/Puanlama altyapısı eklendi.
